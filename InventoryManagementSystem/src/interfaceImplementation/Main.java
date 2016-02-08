@@ -37,7 +37,6 @@ public class Main {
 				PickingResult pr= new PickingResult();
 				System.out.println("Please Enter the productId: ");
 				productId=sc.nextLine();
-				productId="abc123";
 				result= product.checkProductExsist(productId);
 				if(result==1)
 				{
@@ -94,7 +93,11 @@ public class Main {
 		case 4:
 				System.out.println("Please Enter the productId:");
 				productId=sc.nextLine();
-				product.viewItem(productId);
+				result=product.checkProductExsist(productId);
+				if(result==1)
+					product.viewItem(productId);
+				else
+					System.out.println("Product Does not Exsist.");
 				break;
 		case 5:
 					System.out.println("Thank you!");
